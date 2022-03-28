@@ -14,3 +14,5 @@ class DoublyLinkedList {
     this.isCircular = false;
   }
 }
+
+module.exports = DoublyLinkedList;
