@@ -385,4 +385,16 @@ describe("#removeElement", () => {
       expect(dll.length).toBe(2);
     });
   });
+  describe("test 2: with an element that exists", () => {
+    test("it removes the element from the list", () => {
+      const dll = new DoublyLinkedList();
+      dll.appendElement(10);
+      dll.appendElement(20);
+      dll.appendElement(30);
+      dll.removeElement(20);
+
+      expect(dll.getElementAtIndex(1).value).toBe(30);
+      expect(dll.length).toBe(2);
+    });
+  });
 });
