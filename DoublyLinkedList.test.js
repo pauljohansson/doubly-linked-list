@@ -140,4 +140,14 @@ describe("#getIndexOfElement", () => {
       expect(dll.getIndexOfElement(40)).toBe(-1);
     });
   });
+  describe("test 2: with an element that exists", () => {
+    test("it returns its index", () => {
+      const dll = new DoublyLinkedList();
+      dll.appendElement(10);
+      dll.appendElement(20);
+      dll.appendElement(30);
+
+      expect(dll.getIndexOfElement(20)).toBe(1);
+    });
+  });
 });
