@@ -91,3 +91,13 @@ describe("#getElementAtIndex", () => {
     });
   });
 });
+
+describe("#getFirstElement", () => {
+  describe("test 1: with an empty list", () => {
+    test("it returns null", () => {
+      const dll = new DoublyLinkedList();
+
+      expect(dll.getFirstElement()).toBeNull();
+    });
+  });
+});
