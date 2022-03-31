@@ -211,3 +211,45 @@ describe("#insertElementAtIndex", () => {
     });
   });
 });
+
+describe("#removeFirstElement", () => {
+  describe("test 1: with an empty list", () => {
+    test("it will not remove anything", () => {
+      const dll = new DoublyLinkedList();
+      dll.removeFirstElement();
+
+      expect(dll.head).toBeNull();
+      expect(dll.length).toBe(0);
+    });
+  });
+  describe("test 2: with an existing non circular list", () => {
+    test("it removes the first element in the list", () => {
+      const dll = new DoublyLinkedList();
+      dll.appendElement(10);
+      dll.appendElement(20);
+      dll.removeFirstElement();
+
+      expect(dll.head.value).toBe(20);
+      expect(dll.length).toBe(1);
+      expect(dll.head.previous).toBeNull();
+    });
+  });
+  describe("test 3: with an existing circular list", () => {
+    test("it removes the first element in the list then reconnects head.previous with tail and tail.next with head", () => {
+      const dll = new DoublyLinkedList();
+      dll.appendElement(10);
+      dll.appendElement(20);
+      dll.appendElement(30);
+      dll.appendElement(40);
+      dll.isCircular = true;
+      dll.removeFirstElement();
+
+      expect(dll.head.value).toBe(20);
+      expect(dll.length).toBe(3);
+      if (dll.isCircular) {
+        expect(dll.head.previous.value).toBe(40);
+        expect(dll.tail.next.value).toBe(20);
+      }
+    });
+  });
+});
