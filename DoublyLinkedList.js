@@ -55,6 +55,10 @@ class DoublyLinkedList {
     }
     return currentNode;
   }
+
+  getFirstElement() {
+    if (this.head === null) return null;
+  }
 }
 
 module.exports = DoublyLinkedList;
