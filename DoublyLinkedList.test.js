@@ -173,4 +173,15 @@ describe("#insertElementAtIndex", () => {
       expect(dll.length).toBe(2);
     });
   });
+  describe("test 3: with index 0", () => {
+    test("it adds the element at the beginning of the list", () => {
+      const dll = new DoublyLinkedList();
+      dll.appendElement(10);
+      dll.appendElement(20);
+      dll.insertElementAtIndex(0, 30);
+
+      expect(dll.head.value).toBe(30);
+      expect(dll.length).toBe(3);
+    });
+  });
 });
