@@ -119,4 +119,13 @@ describe("#getLastElement", () => {
       expect(dll.getLastElement()).toBeNull();
     });
   });
+  describe("test 2: with an existing list", () => {
+    test("it returns the last element in the list", () => {
+      const dll = new DoublyLinkedList();
+      dll.appendElement(10);
+      dll.appendElement(20);
+
+      expect(dll.getLastElement()).toBe(dll.tail);
+    });
+  });
 });
