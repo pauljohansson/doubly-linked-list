@@ -67,6 +67,10 @@ class DoublyLinkedList {
 
     return this.tail;
   }
+
+  getIndexOfElement(value) {
+    return -1;
+  }
 }
 
 module.exports = DoublyLinkedList;
