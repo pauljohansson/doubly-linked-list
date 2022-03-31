@@ -146,6 +146,13 @@ class DoublyLinkedList {
     this.length--;
     return elementToBeRemoved;
   }
+
+  removeElement(value) {
+    let index = this.getIndexOfElement(value);
+
+    if (index !== -1) return this.removeElementAtIndex(index);
+    else return null;
+  }
 }
 
 module.exports = DoublyLinkedList;
