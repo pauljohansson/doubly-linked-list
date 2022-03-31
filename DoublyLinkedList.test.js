@@ -253,3 +253,15 @@ describe("#removeFirstElement", () => {
     });
   });
 });
+
+describe("#removeLastElement", () => {
+  describe("test 1: with an empty list", () => {
+    test("it will not remove anything", () => {
+      const dll = new DoublyLinkedList();
+      dll.removeLastElement();
+
+      expect(dll.tail).toBeNull();
+      expect(dll.length).toBe(0);
+    });
+  });
+});
