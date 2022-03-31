@@ -184,4 +184,15 @@ describe("#insertElementAtIndex", () => {
       expect(dll.length).toBe(3);
     });
   });
+  describe("test 4: with index that is equal to list length", () => {
+    test("it adds the element at the end of the list", () => {
+      const dll = new DoublyLinkedList();
+      dll.appendElement(10);
+      dll.appendElement(20);
+      dll.insertElementAtIndex(dll.length, 30);
+
+      expect(dll.tail.value).toBe(30);
+      expect(dll.length).toBe(3);
+    });
+  });
 });
