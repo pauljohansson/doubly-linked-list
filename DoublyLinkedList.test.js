@@ -234,4 +234,22 @@ describe("#removeFirstElement", () => {
       expect(dll.head.previous).toBeNull();
     });
   });
+  describe("test 3: with an existing circular list", () => {
+    test("it removes the first element in the list then reconnects head.previous with tail", () => {
+      const dll = new DoublyLinkedList();
+      dll.appendElement(10);
+      dll.appendElement(20);
+      dll.appendElement(30);
+      dll.appendElement(40);
+      dll.isCircular = true;
+      dll.removeFirstElement();
+
+      expect(dll.head.value).toBe(20);
+      expect(dll.length).toBe(3);
+      if (dll.isCircular) {
+        expect(dll.head.previous.value).toBe(40);
+        expect(dll.tail.next.value).toBe(20);
+      }
+    });
+  });
 });
