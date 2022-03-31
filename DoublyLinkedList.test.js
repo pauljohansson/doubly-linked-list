@@ -333,4 +333,15 @@ describe("#removeElementAtIndex", () => {
       expect(dll.length).toBe(2);
     });
   });
+  describe("test 3: with index 0", () => {
+    test("it removes the first element in the list", () => {
+      const dll = new DoublyLinkedList();
+      dll.appendElement(10);
+      dll.appendElement(20);
+      dll.removeElementAtIndex(0);
+
+      expect(dll.head.value).toBe(20);
+      expect(dll.length).toBe(1);
+    });
+  });
 });
