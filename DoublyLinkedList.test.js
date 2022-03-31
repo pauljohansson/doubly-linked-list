@@ -323,4 +323,14 @@ describe("#removeElementAtIndex", () => {
       expect(dll.length).toBe(2);
     });
   });
+  describe("test 2: with index greater than list length", () => {
+    test("it will not remove anything", () => {
+      const dll = new DoublyLinkedList();
+      dll.appendElement(10);
+      dll.appendElement(20);
+      dll.removeElementAtIndex(5);
+
+      expect(dll.length).toBe(2);
+    });
+  });
 });
