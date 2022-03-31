@@ -163,4 +163,14 @@ describe("#insertElementAtIndex", () => {
       expect(dll.length).toBe(2);
     });
   });
+  describe("test 2: with index greater than list length", () => {
+    test("it will not add anything", () => {
+      const dll = new DoublyLinkedList();
+      dll.appendElement(10);
+      dll.appendElement(20);
+      dll.insertElementAtIndex(5, 30);
+
+      expect(dll.length).toBe(2);
+    });
+  });
 });
