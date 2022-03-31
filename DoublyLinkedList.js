@@ -112,7 +112,16 @@ class DoublyLinkedList {
     }
   }
 
-  removeLastElement() {}
+  removeLastElement() {
+    if (this.tail !== null) {
+      let oldTail = this.tail;
+      this.tail = this.tail.previous;
+      this.tail.next = null;
+
+      this.length--;
+      return oldTail;
+    }
+  }
 }
 
 module.exports = DoublyLinkedList;
