@@ -134,7 +134,9 @@ class DoublyLinkedList {
     }
   }
 
-  removeElementAtIndex(index) {}
+  removeElementAtIndex(index) {
+    if (index === 0) return this.removeFirstElement();
+  }
 }
 
 module.exports = DoublyLinkedList;
