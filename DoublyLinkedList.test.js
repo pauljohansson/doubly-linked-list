@@ -151,3 +151,63 @@ describe("#getIndexOfElement", () => {
     });
   });
 });
+
+describe("#insertElementAtIndex", () => {
+  describe("test 1: with index less than 0", () => {
+    test("it will not add anything", () => {
+      const dll = new DoublyLinkedList();
+      dll.appendElement(10);
+      dll.appendElement(20);
+      dll.insertElementAtIndex(-1, 30);
+
+      expect(dll.length).toBe(2);
+    });
+  });
+  describe("test 2: with index greater than list length", () => {
+    test("it will not add anything", () => {
+      const dll = new DoublyLinkedList();
+      dll.appendElement(10);
+      dll.appendElement(20);
+      dll.insertElementAtIndex(5, 30);
+
+      expect(dll.length).toBe(2);
+    });
+  });
+  describe("test 3: with index 0", () => {
+    test("it adds the element at the beginning of the list", () => {
+      const dll = new DoublyLinkedList();
+      dll.appendElement(10);
+      dll.appendElement(20);
+      dll.insertElementAtIndex(0, 30);
+
+      expect(dll.head.value).toBe(30);
+      expect(dll.length).toBe(3);
+    });
+  });
+  describe("test 4: with index that is equal to list length", () => {
+    test("it adds the element at the end of the list", () => {
+      const dll = new DoublyLinkedList();
+      dll.appendElement(10);
+      dll.appendElement(20);
+      dll.insertElementAtIndex(dll.length, 30);
+
+      expect(dll.tail.value).toBe(30);
+      expect(dll.length).toBe(3);
+    });
+  });
+  describe("test 5: with index in the middle", () => {
+    test("it adds the element at the given index", () => {
+      const dll = new DoublyLinkedList();
+      dll.appendElement(10);
+      dll.appendElement(20);
+      dll.appendElement(30);
+      dll.appendElement(40);
+      dll.insertElementAtIndex(2, 50);
+
+      expect(dll.getElementAtIndex(2).value).toBe(50);
+      expect(dll.getElementAtIndex(2).previous.value).toBe(20);
+      expect(dll.getElementAtIndex(2).next.value).toBe(30);
+      expect(dll.length).toBe(5);
+    });
+  });
+});

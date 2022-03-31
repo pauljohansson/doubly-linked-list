@@ -79,6 +79,24 @@ class DoublyLinkedList {
     }
     return -1;
   }
+
+  insertElementAtIndex(index, value) {
+    if (index === 0) return this.prependElement(value);
+    if (index === this.length) return this.appendElement(value);
+    if (index > 0 && index < this.length) {
+      const newNode = new Node(value);
+      const after = this.getElementAtIndex(index);
+      const before = after.previous;
+
+      newNode.previous = before;
+      newNode.next = after;
+      newNode.previous.next = newNode;
+      after.previous = newNode;
+
+      this.length++;
+      return newNode;
+    }
+  }
 }
 
 module.exports = DoublyLinkedList;
