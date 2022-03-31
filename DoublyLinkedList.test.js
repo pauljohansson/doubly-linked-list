@@ -373,3 +373,16 @@ describe("#removeElementAtIndex", () => {
     });
   });
 });
+
+describe("#removeElement", () => {
+  describe("test 1: with an element that does not exist", () => {
+    test("it will not remove anything", () => {
+      const dll = new DoublyLinkedList();
+      dll.appendElement(10);
+      dll.appendElement(20);
+      dll.removeElement(30);
+
+      expect(dll.length).toBe(2);
+    });
+  });
+});
