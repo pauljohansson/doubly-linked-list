@@ -78,4 +78,16 @@ describe("#getElementAtIndex", () => {
       expect(dll.getElementAtIndex(0)).toBe(dll.head);
     });
   });
+  describe("test 4: with index in the middle", () => {
+    test("it returns the element at that index", () => {
+      const dll = new DoublyLinkedList();
+      dll.appendElement(10);
+      dll.appendElement(20);
+      dll.appendElement(30);
+      dll.appendElement(40);
+      dll.appendElement(50);
+
+      expect(dll.getElementAtIndex(2)).toBe(dll.head.next.next);
+    });
+  });
 });
