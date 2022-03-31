@@ -133,6 +133,8 @@ class DoublyLinkedList {
       this.length = 0;
     }
   }
+
+  removeElementAtIndex(index) {}
 }
 
 module.exports = DoublyLinkedList;
