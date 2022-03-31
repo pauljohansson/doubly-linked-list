@@ -195,4 +195,19 @@ describe("#insertElementAtIndex", () => {
       expect(dll.length).toBe(3);
     });
   });
+  describe("test 5: with index in the middle", () => {
+    test("it adds the element at the given index", () => {
+      const dll = new DoublyLinkedList();
+      dll.appendElement(10);
+      dll.appendElement(20);
+      dll.appendElement(30);
+      dll.appendElement(40);
+      dll.insertElementAtIndex(2, 50);
+
+      expect(dll.getElementAtIndex(2).value).toBe(50);
+      expect(dll.getElementAtIndex(2).previous.value).toBe(20);
+      expect(dll.getElementAtIndex(2).next.value).toBe(30);
+      expect(dll.length).toBe(5);
+    });
+  });
 });
