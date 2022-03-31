@@ -311,3 +311,16 @@ describe("#removeAllElements", () => {
     });
   });
 });
+
+describe("#removeElementAtIndex", () => {
+  describe("test 1: with index less than 0", () => {
+    test("it will not remove anything", () => {
+      const dll = new DoublyLinkedList();
+      dll.appendElement(10);
+      dll.appendElement(20);
+      dll.removeElementAtIndex(-1);
+
+      expect(dll.length).toBe(2);
+    });
+  });
+});
