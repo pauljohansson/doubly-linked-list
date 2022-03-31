@@ -41,6 +41,10 @@ class DoublyLinkedList {
     }
     this.length++;
   }
+
+  getElementAtIndex(index) {
+    if (index < 0) return null;
+  }
 }
 
 module.exports = DoublyLinkedList;
