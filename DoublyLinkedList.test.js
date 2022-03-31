@@ -60,4 +60,13 @@ describe("#getElementAtIndex", () => {
       expect(dll.getElementAtIndex(-1)).toBeNull();
     });
   });
+  describe("test 2: with index greater than list length", () => {
+    test("it returns null", () => {
+      const dll = new DoublyLinkedList();
+      dll.appendElement(10);
+      dll.appendElement(20);
+
+      expect(dll.getElementAtIndex(5)).toBeNull();
+    });
+  });
 });
