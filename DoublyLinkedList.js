@@ -102,7 +102,10 @@ class DoublyLinkedList {
     if (this.head !== null) {
       let oldHead = this.head;
       this.head = this.head.next;
-      this.head.previous = null;
+      if (this.isCircular) {
+        this.head.previous = this.tail;
+        this.tail.next = this.head;
+      } else this.head.previous = null;
 
       this.length--;
       return oldHead;
