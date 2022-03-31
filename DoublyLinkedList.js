@@ -45,6 +45,15 @@ class DoublyLinkedList {
   getElementAtIndex(index) {
     if (index < 0 || index >= this.length) return null;
     if (index === 0) return this.head;
+
+    let currentIndex = 0;
+    let currentNode = this.head;
+
+    while (currentIndex !== index) {
+      currentNode = currentNode.next;
+      currentIndex++;
+    }
+    return currentNode;
   }
 }
 
