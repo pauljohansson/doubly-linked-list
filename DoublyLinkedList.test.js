@@ -211,3 +211,15 @@ describe("#insertElementAtIndex", () => {
     });
   });
 });
+
+describe("#removeFirstElement", () => {
+  describe("test 1: with an empty list", () => {
+    test("it will not remove anything", () => {
+      const dll = new DoublyLinkedList();
+      dll.removeFirstElement();
+
+      expect(dll.head).toBeNull();
+      expect(dll.length).toBe(0);
+    });
+  });
+});
