@@ -13,6 +13,20 @@ class DoublyLinkedList {
     this.length = 0;
     this.isCircular = false;
   }
+
+  prependElement(value) {
+    const newNode = new Node(value);
+
+    if (this.head === null) {
+      this.head = newNode;
+      this.tail = newNode;
+    } else {
+      newNode.next = this.head;
+      this.head.previous = newNode;
+      this.head = newNode;
+    }
+    this.length++;
+  }
 }
 
 module.exports = DoublyLinkedList;
