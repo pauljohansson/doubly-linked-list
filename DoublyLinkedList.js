@@ -69,6 +69,14 @@ class DoublyLinkedList {
   }
 
   getIndexOfElement(value) {
+    let currentIndex = 0;
+    let currentNode = this.head;
+
+    while (currentNode) {
+      if (currentNode.value === value) return currentIndex;
+      currentNode = currentNode.next;
+      currentIndex++;
+    }
     return -1;
   }
 }
