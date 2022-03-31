@@ -222,4 +222,16 @@ describe("#removeFirstElement", () => {
       expect(dll.length).toBe(0);
     });
   });
+  describe("test 2: with an existing non circular list", () => {
+    test("it removes the first element in the list", () => {
+      const dll = new DoublyLinkedList();
+      dll.appendElement(10);
+      dll.appendElement(20);
+      dll.removeFirstElement();
+
+      expect(dll.head.value).toBe(20);
+      expect(dll.length).toBe(1);
+      expect(dll.head.previous).toBeNull();
+    });
+  });
 });
