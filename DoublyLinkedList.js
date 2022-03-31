@@ -27,6 +27,16 @@ class DoublyLinkedList {
     }
     this.length++;
   }
+
+  appendElement(value) {
+    const newNode = new Node(value);
+
+    if (this.head === null) {
+      this.head = newNode;
+      this.tail = newNode;
+    }
+    this.length++;
+  }
 }
 
 module.exports = DoublyLinkedList;
