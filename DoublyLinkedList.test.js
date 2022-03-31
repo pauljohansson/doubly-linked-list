@@ -344,4 +344,16 @@ describe("#removeElementAtIndex", () => {
       expect(dll.length).toBe(1);
     });
   });
+  describe("test 4: with index that is equal to list length - 1", () => {
+    test("it removes the last element in the list", () => {
+      const dll = new DoublyLinkedList();
+      dll.appendElement(10);
+      dll.appendElement(20);
+      dll.appendElement(30);
+      dll.removeElementAtIndex(dll.length - 1);
+
+      expect(dll.tail.value).toBe(20);
+      expect(dll.length).toBe(2);
+    });
+  });
 });
