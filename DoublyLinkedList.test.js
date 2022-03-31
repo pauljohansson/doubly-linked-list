@@ -129,3 +129,15 @@ describe("#getLastElement", () => {
     });
   });
 });
+
+describe("#getIndexOfElement", () => {
+  describe("test 1: with an element that does not exist", () => {
+    test("it returns -1", () => {
+      const dll = new DoublyLinkedList();
+      dll.appendElement(10);
+      dll.appendElement(20);
+
+      expect(dll.getIndexOfElement(40)).toBe(-1);
+    });
+  });
+});
