@@ -64,6 +64,8 @@ class DoublyLinkedList {
 
   getLastElement() {
     if (this.tail === null) return null;
+
+    return this.tail;
   }
 }
 
