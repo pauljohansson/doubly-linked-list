@@ -295,3 +295,19 @@ describe("#removeLastElement", () => {
     });
   });
 });
+
+describe("#removeAllElements", () => {
+  describe("test 1: with a list of elements", () => {
+    test("it removes all elements in the list", () => {
+      const dll = new DoublyLinkedList();
+      dll.appendElement(10);
+      dll.appendElement(20);
+      dll.appendElement(30);
+      dll.removeAllElements();
+
+      expect(dll.head).toBeNull();
+      expect(dll.tail).toBeNull();
+      expect(dll.length).toBe(0);
+    });
+  });
+});
