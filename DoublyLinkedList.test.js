@@ -69,4 +69,13 @@ describe("#getElementAtIndex", () => {
       expect(dll.getElementAtIndex(5)).toBeNull();
     });
   });
+  describe("test 3: with index 0", () => {
+    test("it returns the first element in the list", () => {
+      const dll = new DoublyLinkedList();
+      dll.appendElement(10);
+      dll.appendElement(20);
+
+      expect(dll.getElementAtIndex(0)).toBe(dll.head);
+    });
+  });
 });
