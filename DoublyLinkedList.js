@@ -135,8 +135,16 @@ class DoublyLinkedList {
   }
 
   removeElementAtIndex(index) {
+    if (index < 0 || index >= this.length) return null;
     if (index === 0) return this.removeFirstElement();
     if (index === this.length - 1) return this.removeLastElement();
+
+    const elementToBeRemoved = this.getElementAtIndex(index);
+    elementToBeRemoved.next.previous = elementToBeRemoved.previous;
+    elementToBeRemoved.previous.next = elementToBeRemoved.next;
+
+    this.length--;
+    return elementToBeRemoved;
   }
 }
 
