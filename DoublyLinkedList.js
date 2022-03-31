@@ -111,6 +111,8 @@ class DoublyLinkedList {
       return oldHead;
     }
   }
+
+  removeLastElement() {}
 }
 
 module.exports = DoublyLinkedList;
