@@ -100,4 +100,13 @@ describe("#getFirstElement", () => {
       expect(dll.getFirstElement()).toBeNull();
     });
   });
+  describe("test 2: with an existing list", () => {
+    test("it returns the first element in the list", () => {
+      const dll = new DoublyLinkedList();
+      dll.appendElement(10);
+      dll.appendElement(20);
+
+      expect(dll.getFirstElement()).toBe(dll.head);
+    });
+  });
 });
