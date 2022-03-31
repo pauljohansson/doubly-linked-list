@@ -79,6 +79,8 @@ class DoublyLinkedList {
     }
     return -1;
   }
+
+  insertElementAtIndex(index, value) {}
 }
 
 module.exports = DoublyLinkedList;
