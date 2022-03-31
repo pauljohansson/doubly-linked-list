@@ -146,6 +146,8 @@ class DoublyLinkedList {
     this.length--;
     return elementToBeRemoved;
   }
+
+  removeElement(value) {}
 }
 
 module.exports = DoublyLinkedList;
