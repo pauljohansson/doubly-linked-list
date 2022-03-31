@@ -110,3 +110,13 @@ describe("#getFirstElement", () => {
     });
   });
 });
+
+describe("#getLastElement", () => {
+  describe("test 1: with an empty list", () => {
+    test("it returns null", () => {
+      const dll = new DoublyLinkedList();
+
+      expect(dll.getLastElement()).toBeNull();
+    });
+  });
+});
