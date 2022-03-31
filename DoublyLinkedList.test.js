@@ -311,3 +311,65 @@ describe("#removeAllElements", () => {
     });
   });
 });
+
+describe("#removeElementAtIndex", () => {
+  describe("test 1: with index less than 0", () => {
+    test("it will not remove anything", () => {
+      const dll = new DoublyLinkedList();
+      dll.appendElement(10);
+      dll.appendElement(20);
+      dll.removeElementAtIndex(-1);
+
+      expect(dll.length).toBe(2);
+    });
+  });
+  describe("test 2: with index greater than list length", () => {
+    test("it will not remove anything", () => {
+      const dll = new DoublyLinkedList();
+      dll.appendElement(10);
+      dll.appendElement(20);
+      dll.removeElementAtIndex(5);
+
+      expect(dll.length).toBe(2);
+    });
+  });
+  describe("test 3: with index 0", () => {
+    test("it removes the first element in the list", () => {
+      const dll = new DoublyLinkedList();
+      dll.appendElement(10);
+      dll.appendElement(20);
+      dll.removeElementAtIndex(0);
+
+      expect(dll.head.value).toBe(20);
+      expect(dll.length).toBe(1);
+    });
+  });
+  describe("test 4: with index that is equal to list length - 1", () => {
+    test("it removes the last element in the list", () => {
+      const dll = new DoublyLinkedList();
+      dll.appendElement(10);
+      dll.appendElement(20);
+      dll.appendElement(30);
+      dll.removeElementAtIndex(dll.length - 1);
+
+      expect(dll.tail.value).toBe(20);
+      expect(dll.length).toBe(2);
+    });
+  });
+  describe("test 5: with index in the middle", () => {
+    test("it removes the element at the given index", () => {
+      const dll = new DoublyLinkedList();
+      dll.appendElement(10);
+      dll.appendElement(20);
+      dll.appendElement(30);
+      dll.appendElement(40);
+      dll.appendElement(50);
+      dll.removeElementAtIndex(2);
+
+      expect(dll.getElementAtIndex(2).value).toBe(40);
+      expect(dll.getElementAtIndex(2).previous.value).toBe(20);
+      expect(dll.getElementAtIndex(2).next.value).toBe(50);
+      expect(dll.length).toBe(4);
+    });
+  });
+});
