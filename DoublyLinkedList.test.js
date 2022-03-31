@@ -151,3 +151,16 @@ describe("#getIndexOfElement", () => {
     });
   });
 });
+
+describe("#insertElementAtIndex", () => {
+  describe("test 1: with index less than 0", () => {
+    test("it will not add anything", () => {
+      const dll = new DoublyLinkedList();
+      dll.appendElement(10);
+      dll.appendElement(20);
+      dll.insertElementAtIndex(-1, 30);
+
+      expect(dll.length).toBe(2);
+    });
+  });
+});
