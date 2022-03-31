@@ -43,7 +43,7 @@ class DoublyLinkedList {
   }
 
   getElementAtIndex(index) {
-    if (index < 0) return null;
+    if (index < 0 || index >= this.length) return null;
   }
 }
 
