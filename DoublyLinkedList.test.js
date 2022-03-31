@@ -49,3 +49,45 @@ describe("#appendElement", () => {
     });
   });
 });
+
+describe("#getElementAtIndex", () => {
+  describe("test 1: with index less than 0", () => {
+    test("it returns null", () => {
+      const dll = new DoublyLinkedList();
+      dll.appendElement(10);
+      dll.appendElement(20);
+
+      expect(dll.getElementAtIndex(-1)).toBeNull();
+    });
+  });
+  describe("test 2: with index greater than list length", () => {
+    test("it returns null", () => {
+      const dll = new DoublyLinkedList();
+      dll.appendElement(10);
+      dll.appendElement(20);
+
+      expect(dll.getElementAtIndex(5)).toBeNull();
+    });
+  });
+  describe("test 3: with index 0", () => {
+    test("it returns the first element in the list", () => {
+      const dll = new DoublyLinkedList();
+      dll.appendElement(10);
+      dll.appendElement(20);
+
+      expect(dll.getElementAtIndex(0)).toBe(dll.head);
+    });
+  });
+  describe("test 4: with index in the middle", () => {
+    test("it returns the element at that index", () => {
+      const dll = new DoublyLinkedList();
+      dll.appendElement(10);
+      dll.appendElement(20);
+      dll.appendElement(30);
+      dll.appendElement(40);
+      dll.appendElement(50);
+
+      expect(dll.getElementAtIndex(2)).toBe(dll.head.next.next);
+    });
+  });
+});
