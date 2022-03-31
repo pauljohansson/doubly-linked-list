@@ -58,6 +58,8 @@ class DoublyLinkedList {
 
   getFirstElement() {
     if (this.head === null) return null;
+
+    return this.head;
   }
 }
 
