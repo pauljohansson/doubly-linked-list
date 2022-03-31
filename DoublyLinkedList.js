@@ -61,6 +61,10 @@ class DoublyLinkedList {
 
     return this.head;
   }
+
+  getLastElement() {
+    if (this.tail === null) return null;
+  }
 }
 
 module.exports = DoublyLinkedList;
