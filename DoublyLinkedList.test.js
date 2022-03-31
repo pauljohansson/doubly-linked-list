@@ -276,4 +276,22 @@ describe("#removeLastElement", () => {
       expect(dll.length).toBe(2);
     });
   });
+  describe("test 3: with an existing circular list", () => {
+    test("it removes the last element in the list then reconnects tail.next with head and head.previous with tail", () => {
+      const dll = new DoublyLinkedList();
+      dll.appendElement(10);
+      dll.appendElement(20);
+      dll.appendElement(30);
+      dll.appendElement(40);
+      dll.isCircular = true;
+      dll.removeLastElement();
+
+      expect(dll.tail.value).toBe(30);
+      expect(dll.length).toBe(3);
+      if (dll.isCircular) {
+        expect(dll.tail.next.value).toBe(10);
+        expect(dll.head.previous.value).toBe(30);
+      }
+    });
+  });
 });
