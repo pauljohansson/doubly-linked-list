@@ -82,6 +82,7 @@ class DoublyLinkedList {
 
   insertElementAtIndex(index, value) {
     if (index === 0) return this.prependElement(value);
+    if (index === this.length) return this.appendElement(value);
   }
 }
 
