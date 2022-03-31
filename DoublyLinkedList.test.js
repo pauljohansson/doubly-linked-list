@@ -235,7 +235,7 @@ describe("#removeFirstElement", () => {
     });
   });
   describe("test 3: with an existing circular list", () => {
-    test("it removes the first element in the list then reconnects head.previous with tail", () => {
+    test("it removes the first element in the list then reconnects head.previous with tail and tail.next with head", () => {
       const dll = new DoublyLinkedList();
       dll.appendElement(10);
       dll.appendElement(20);
