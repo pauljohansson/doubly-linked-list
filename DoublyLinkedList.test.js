@@ -264,4 +264,16 @@ describe("#removeLastElement", () => {
       expect(dll.length).toBe(0);
     });
   });
+  describe("test 2: with an existing non circular list", () => {
+    test("it removes the last element in the list", () => {
+      const dll = new DoublyLinkedList();
+      dll.appendElement(10);
+      dll.appendElement(20);
+      dll.appendElement(30);
+      dll.removeLastElement();
+
+      expect(dll.tail.value).toBe(20);
+      expect(dll.length).toBe(2);
+    });
+  });
 });
