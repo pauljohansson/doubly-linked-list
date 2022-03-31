@@ -97,6 +97,8 @@ class DoublyLinkedList {
       return newNode;
     }
   }
+
+  removeFirstElement() {}
 }
 
 module.exports = DoublyLinkedList;
