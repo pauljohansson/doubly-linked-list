@@ -125,6 +125,14 @@ class DoublyLinkedList {
       return oldTail;
     }
   }
+
+  removeAllElements() {
+    if (this.head !== null && this.tail !== null) {
+      this.head = null;
+      this.tail = null;
+      this.length = 0;
+    }
+  }
 }
 
 module.exports = DoublyLinkedList;
