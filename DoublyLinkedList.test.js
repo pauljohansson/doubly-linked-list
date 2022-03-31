@@ -25,3 +25,27 @@ describe("#prependElement", () => {
     });
   });
 });
+
+describe("#appendElement", () => {
+  describe("test 1: with an empty list", () => {
+    test("it adds the element at the end of the list", () => {
+      const dll = new DoublyLinkedList();
+      dll.appendElement(10);
+
+      expect(dll.head.value).toBe(10);
+      expect(dll.length).toBe(1);
+    });
+  });
+  describe("test 2: with an existing list", () => {
+    test("it adds the element at the end of the list", () => {
+      const dll = new DoublyLinkedList();
+      dll.appendElement(10);
+      dll.appendElement(20);
+
+      expect(dll.head.value).toBe(10);
+      expect(dll.head.next.value).toBe(20);
+      expect(dll.tail.previous).toBe(dll.head);
+      expect(dll.length).toBe(2);
+    });
+  });
+});
