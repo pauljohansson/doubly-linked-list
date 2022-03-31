@@ -80,7 +80,9 @@ class DoublyLinkedList {
     return -1;
   }
 
-  insertElementAtIndex(index, value) {}
+  insertElementAtIndex(index, value) {
+    if (index === 0) return this.prependElement(value);
+  }
 }
 
 module.exports = DoublyLinkedList;
