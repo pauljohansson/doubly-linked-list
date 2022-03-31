@@ -49,3 +49,15 @@ describe("#appendElement", () => {
     });
   });
 });
+
+describe("#getElementAtIndex", () => {
+  describe("test 1: with index less than 0", () => {
+    test("it returns null", () => {
+      const dll = new DoublyLinkedList();
+      dll.appendElement(10);
+      dll.appendElement(20);
+
+      expect(dll.getElementAtIndex(-1)).toBeNull();
+    });
+  });
+});
