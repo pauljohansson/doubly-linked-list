@@ -271,7 +271,7 @@ describe("#removeFirstElement", () => {
       dll.appendElement(20);
       dll.appendElement(30);
       dll.appendElement(40);
-      dll.isCircular = true;
+      dll.convertToCircularDoublyLinkedList();
       dll.removeFirstElement();
 
       expect(dll.head.value).toBe(20);
@@ -313,7 +313,7 @@ describe("#removeLastElement", () => {
       dll.appendElement(20);
       dll.appendElement(30);
       dll.appendElement(40);
-      dll.isCircular = true;
+      dll.convertToCircularDoublyLinkedList();
       dll.removeLastElement();
 
       expect(dll.tail.value).toBe(30);
