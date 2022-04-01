@@ -24,6 +24,10 @@ class DoublyLinkedList {
       newNode.next = this.head;
       this.head.previous = newNode;
       this.head = newNode;
+      if (this.isCircular) {
+        newNode.previous = this.tail;
+        this.tail.next = newNode;
+      }
     }
     this.length++;
   }
