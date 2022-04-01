@@ -161,6 +161,14 @@ class DoublyLinkedList {
     this.tail.next = this.head;
     this.isCircular = true;
   }
+
+  revertBackToDoublyLinkedList() {
+    if (this.head === null || this.tail === null) return null;
+
+    this.head.previous = null;
+    this.tail.next = null;
+    this.isCircular = false;
+  }
 }
 
 module.exports = DoublyLinkedList;
