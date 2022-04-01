@@ -398,3 +398,18 @@ describe("#removeElement", () => {
     });
   });
 });
+
+describe("#convertToCircularDoublyLinkedList", () => {
+  describe("test 1: with a doubly linked list where its head.previous and tail.next point to null", () => {
+    test("it will make head.previous point to tail and tail.next to head", () => {
+      const dll = new DoublyLinkedList();
+      dll.appendElement(10);
+      dll.appendElement(20);
+      dll.appendElement(30);
+      dll.convertToCircularDoublyLinkedList();
+
+      expect(dll.head.previous).toBe(dll.tail);
+      expect(dll.tail.next).toBe(dll.head);
+    });
+  });
+});

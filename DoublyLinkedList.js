@@ -153,6 +153,14 @@ class DoublyLinkedList {
     if (index !== -1) return this.removeElementAtIndex(index);
     else return null;
   }
+
+  convertToCircularDoublyLinkedList() {
+    if (this.head === null || this.tail === null) return null;
+
+    this.head.previous = this.tail;
+    this.tail.next = this.head;
+    this.isCircular = true;
+  }
 }
 
 module.exports = DoublyLinkedList;
