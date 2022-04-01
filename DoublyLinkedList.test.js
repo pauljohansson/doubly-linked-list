@@ -410,6 +410,7 @@ describe("#convertToCircularDoublyLinkedList", () => {
 
       expect(dll.head.previous).toBe(dll.tail);
       expect(dll.tail.next).toBe(dll.head);
+      expect(dll.isCircular).toBe(true);
     });
   });
 });
