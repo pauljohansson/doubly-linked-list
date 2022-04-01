@@ -63,6 +63,21 @@ describe("#appendElement", () => {
       expect(dll.length).toBe(2);
     });
   });
+  describe("test 3: when the list is circular", () => {
+    test("it adds the element at the end of the list then reconnects the loop", () => {
+      const dll = new DoublyLinkedList();
+      dll.appendElement(10);
+      dll.appendElement(20);
+      dll.convertToCircularDoublyLinkedList();
+      dll.appendElement(30);
+
+      expect(dll.head.value).toBe(10);
+      expect(dll.tail.value).toBe(30);
+      expect(dll.head.previous.value).toBe(30);
+      expect(dll.tail.next.value).toBe(10);
+      expect(dll.length).toBe(3);
+    });
+  });
 });
 
 describe("#getElementAtIndex", () => {
