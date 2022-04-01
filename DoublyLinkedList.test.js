@@ -414,3 +414,20 @@ describe("#convertToCircularDoublyLinkedList", () => {
     });
   });
 });
+
+describe("#revertBackToDoublyLinkedList", () => {
+  describe("test 1: with a doubly linked list where its head.previous points to tail and tail.next to head", () => {
+    test("it will make head.previous and tail.next point back to null", () => {
+      const dll = new DoublyLinkedList();
+      dll.appendElement(10);
+      dll.appendElement(20);
+      dll.appendElement(30);
+      dll.convertToCircularDoublyLinkedList();
+      dll.revertBackToDoublyLinkedList();
+
+      expect(dll.head.previous).toBeNull();
+      expect(dll.tail.next).toBeNull();
+      expect(dll.isCircular).toBe(false);
+    });
+  });
+});
