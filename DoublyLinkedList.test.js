@@ -481,4 +481,16 @@ describe("#revertBackToDoublyLinkedList", () => {
       expect(dll.isCircular).toBe(false);
     });
   });
+  describe("test 2: with an empty list", () => {
+    test("nothing will happen", () => {
+      const dll = new DoublyLinkedList();
+      dll.convertToCircularDoublyLinkedList();
+      dll.revertBackToDoublyLinkedList();
+
+      expect(dll.head).toBeNull();
+      expect(dll.tail).toBeNull();
+      expect(dll.length).toBe(0);
+      expect(dll.isCircular).toBe(false);
+    });
+  });
 });
