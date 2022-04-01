@@ -340,6 +340,16 @@ describe("#removeAllElements", () => {
       expect(dll.length).toBe(0);
     });
   });
+  describe("test 2: with an empty list", () => {
+    test("the list remains empty", () => {
+      const dll = new DoublyLinkedList();
+      dll.removeAllElements();
+
+      expect(dll.head).toBeNull();
+      expect(dll.tail).toBeNull();
+      expect(dll.length).toBe(0);
+    });
+  });
 });
 
 describe("#removeElementAtIndex", () => {
